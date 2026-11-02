@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Busog</title>
+  <meta name="description" content="Log meals, recipes and takeout, and see how full your day is.">
+  <meta name="theme-color" content="#1F5E3B">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <div class="app">
+    <main id="view" class="view" tabindex="-1"></main>
+    <nav class="tabs" aria-label="Sections">
+      <button type="button" data-action="tab" data-v="today">
+        <span class="tab-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11h18c0 5-4 8-9 8s-9-3-9-8z"/><path d="M9 19l1 2h4l1-2"/></svg></span>
+        <span>Today</span>
+      </button>
+      <button type="button" data-action="tab" data-v="recipes">
+        <span class="tab-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10h16v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path d="M2 10h20M9 6c0-1 1-2 1-3M14 6c0-1 1-2 1-3"/></svg></span>
+        <span>Recipes</span>
+      </button>
+      <button type="button" class="tab-log" data-action="open-log" aria-label="Log food">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+      </button>
+      <button type="button" data-action="tab" data-v="foods">
+        <span class="tab-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="M16 16l4 4"/></svg></span>
+        <span>Foods</span>
+      </button>
+      <button type="button" data-action="tab" data-v="me">
+        <span class="tab-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span>
+        <span>Progress</span>
+      </button>
+    </nav>
+  </div>
+  <div id="sheet" class="sheet-wrap" hidden></div>
+  <div id="dialog" class="dialog-wrap" hidden></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <input id="import-file" type="file" accept="application/json,.json" hidden>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
